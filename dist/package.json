@@ -1,0 +1,17 @@
+{
+		"version": "1.0.0.0",
+		"author": {"name":"Vladislav Razvodov","email":"Gerhard8RVA@gmail.com"},
+		"resources": [
+			{
+				"resourceId": "rId0",
+				"sourceType": 5,
+				"file": "resources/pageNumberVisual5A3213A7C2204F4286C88D41E9B989A2.pbiviz.json"
+			}
+		],
+		"visual": {"name":"pageNumberVisual","displayName":"Pagination","guid":"pageNumberVisual5A3213A7C2204F4286C88D41E9B989A2","visualClassName":"Visual","version":"1.0.0.0","description":"Simple visualization to display page number in Power BI.","supportUrl":"https://github.com/Gerhard-chief/pageNumberVisual","gitHubUrl":"https://github.com/Gerhard-chief/pageNumberVisual"},
+		"metadata": {
+			"pbivizjson": {
+				"resourceId": "rId0"
+			}
+		}
+	}

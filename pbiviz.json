@@ -1,7 +1,7 @@
 {
     "visual": {
       "name": "pageNumberVisual",
-      "displayName": "Нумерация страниц",
+      "displayName": "Pagination",
       "guid": "pageNumberVisual5A3213A7C2204F4286C88D41E9B989A2",
       "visualClassName": "Visual",
       "version": "1.0.0.0",

@@ -7,7 +7,7 @@ var powerbiKey: any = "powerbi";
 var powerbi: any = window[powerbiKey];
 var pageNumberVisual5A3213A7C2204F4286C88D41E9B989A2: IVisualPlugin = {
     name: 'pageNumberVisual5A3213A7C2204F4286C88D41E9B989A2',
-    displayName: 'pageNumberVisual',
+    displayName: 'Pagination',
     class: 'Visual',
     apiVersion: '5.3.0',
     create: (options?: VisualConstructorOptions) => {
