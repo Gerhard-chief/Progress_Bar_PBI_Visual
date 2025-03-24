@@ -5,8 +5,8 @@ import VisualUpdateOptions = powerbi.extensibility.visual.VisualUpdateOptions;
 import IVisual = powerbi.extensibility.visual.IVisual;
 export declare class Visual implements IVisual {
     private target;
-    private updateCount;
-    private textNode;
+    private barElement;
+    private fillElement;
     private formattingSettings;
     private formattingSettingsService;
     constructor(options: VisualConstructorOptions);

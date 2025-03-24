@@ -1,13 +1,13 @@
 {
     "visual": {
-      "name": "pageNumberVisual",
-      "displayName": "Pagination",
-      "guid": "pageNumberVisual5A3213A7C2204F4286C88D41E9B989A2",
+      "name": "Progress_Bar_PBI_Visual",
+      "displayName": "Simple Progress Bar",
+      "guid": "SimpleProgressBar5A3213A7C2204F4286C88D41E9B989A2",
       "visualClassName": "Visual",
       "version": "1.0.0.0",
       "description": "Simple visualization to display page number in Power BI.",
-      "supportUrl": "https://github.com/Gerhard-chief/pageNumberVisual",
-      "gitHubUrl": "https://github.com/Gerhard-chief/pageNumberVisual"
+      "supportUrl": "https://github.com/Gerhard-chief/Progress_Bar_PBI_Visual",
+      "gitHubUrl": "https://github.com/Gerhard-chief/Progress_Bar_PBI_Visual"
     },
     "apiVersion": "5.3.0",
     "author": {

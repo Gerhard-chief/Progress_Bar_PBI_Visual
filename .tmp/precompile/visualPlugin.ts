@@ -5,9 +5,9 @@ import VisualConstructorOptions = powerbiVisualsApi.extensibility.visual.VisualC
 import DialogConstructorOptions = powerbiVisualsApi.extensibility.visual.DialogConstructorOptions;
 var powerbiKey: any = "powerbi";
 var powerbi: any = window[powerbiKey];
-var pageNumberVisual5A3213A7C2204F4286C88D41E9B989A2: IVisualPlugin = {
-    name: 'pageNumberVisual5A3213A7C2204F4286C88D41E9B989A2',
-    displayName: 'Pagination',
+var SimpleProgressBar5A3213A7C2204F4286C88D41E9B989A2: IVisualPlugin = {
+    name: 'SimpleProgressBar5A3213A7C2204F4286C88D41E9B989A2',
+    displayName: 'Simple Progress Bar',
     class: 'Visual',
     apiVersion: '5.3.0',
     create: (options?: VisualConstructorOptions) => {
@@ -27,6 +27,6 @@ var pageNumberVisual5A3213A7C2204F4286C88D41E9B989A2: IVisualPlugin = {
 if (typeof powerbi !== "undefined") {
     powerbi.visuals = powerbi.visuals || {};
     powerbi.visuals.plugins = powerbi.visuals.plugins || {};
-    powerbi.visuals.plugins["pageNumberVisual5A3213A7C2204F4286C88D41E9B989A2"] = pageNumberVisual5A3213A7C2204F4286C88D41E9B989A2;
+    powerbi.visuals.plugins["SimpleProgressBar5A3213A7C2204F4286C88D41E9B989A2"] = SimpleProgressBar5A3213A7C2204F4286C88D41E9B989A2;
 }
-export default pageNumberVisual5A3213A7C2204F4286C88D41E9B989A2;
+export default SimpleProgressBar5A3213A7C2204F4286C88D41E9B989A2;

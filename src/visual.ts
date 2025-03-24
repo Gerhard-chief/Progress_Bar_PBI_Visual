@@ -12,8 +12,8 @@ import { VisualFormattingSettingsModel } from "./settings";
 
 export class Visual implements IVisual {
     private target: HTMLElement;
-    private updateCount: number;
-    private textNode: Text;
+    private barElement: HTMLDivElement;
+    private fillElement: HTMLDivElement;
     private formattingSettings: VisualFormattingSettingsModel;
     private formattingSettingsService: FormattingSettingsService;
 
@@ -21,25 +21,40 @@ export class Visual implements IVisual {
         console.log('Visual constructor', options);
         this.formattingSettingsService = new FormattingSettingsService();
         this.target = options.element;
-        this.updateCount = 0;
-        if (document) {
-            const new_p: HTMLElement = document.createElement("p");
-            new_p.appendChild(document.createTextNode("Page Number:"));
-            const new_em: HTMLElement = document.createElement("em");
-            this.textNode = document.createTextNode("1");
-            new_em.appendChild(this.textNode);
-            new_p.appendChild(new_em);
-            this.target.appendChild(new_p);
-        }
-    }
-    public update(options: VisualUpdateOptions) {
-        this.formattingSettings = this.formattingSettingsService.populateFormattingSettingsModel(VisualFormattingSettingsModel, options.dataViews[0]);
 
-        console.log('Visual update', options);
-        if (this.textNode) {
-            this.textNode.textContent = "1";
-        }
+        // Обёртка для статус-бара
+        this.barElement = document.createElement("div");
+        this.barElement.style.width = "100%";
+        this.barElement.style.height = "20px";
+        this.barElement.style.backgroundColor = "#e0e0e0";
+        this.barElement.style.borderRadius = "4px";
+
+        // Заполненная часть статус-бара
+        this.fillElement = document.createElement("div");
+        this.fillElement.style.height = "100%";
+        this.fillElement.style.width = "50%"; // временно 50%, заменим в update
+        this.fillElement.style.backgroundColor = "#4682b4";
+        this.fillElement.style.borderRadius = "4px";
+        this.barElement.appendChild(this.fillElement);
+
+        this.target.appendChild(this.barElement);
     }
+
+    public update(options: VisualUpdateOptions) {
+        this.formattingSettings = this.formattingSettingsService.populateFormattingSettingsModel(
+            VisualFormattingSettingsModel,
+            options.dataViews[0]
+        );
+
+        console.log("Visual update", options);
+
+        // Получим значение из measure, если оно есть
+        const value = options.dataViews?.[0]?.single?.value;
+        const percent = typeof value === "number" ? Math.max(0, Math.min(100, value)) : 0;
+
+        this.fillElement.style.width = `${percent}%`;
+    }
+
     public getFormattingModel(): powerbi.visuals.FormattingModel {
         return this.formattingSettingsService.buildFormattingModel(this.formattingSettings);
     }
