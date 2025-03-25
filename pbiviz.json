@@ -5,7 +5,7 @@
       "guid": "SimpleProgressBar5A3213A7C2204F4286C88D41E9B989A2",
       "visualClassName": "Visual",
       "version": "1.0.0.0",
-      "description": "Simple visualization to display page number in Power BI.",
+      "description": "A minimal progress bar visual for Power BI to represent values from 0 to 100.",
       "supportUrl": "https://github.com/Gerhard-chief/Progress_Bar_PBI_Visual",
       "gitHubUrl": "https://github.com/Gerhard-chief/Progress_Bar_PBI_Visual"
     },
