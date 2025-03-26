@@ -21,7 +21,7 @@ export class Visual implements IVisual {
         console.log('Visual constructor', options);
         this.formattingSettingsService = new FormattingSettingsService();
         this.target = options.element;
-
+        const defaultColor = "#4682b4";
         // Обёртка для статус-бара
         this.barElement = document.createElement("div");
         this.barElement.style.width = "100%";
@@ -33,8 +33,8 @@ export class Visual implements IVisual {
         this.fillElement = document.createElement("div");
         this.fillElement.style.height = "100%";
         this.fillElement.style.width = "50%"; // временно 50%, заменим в update
-        this.fillElement.style.backgroundColor = "#4682b4";
         this.fillElement.style.borderRadius = "4px";
+        this.fillElement.style.backgroundColor = defaultColor;
         this.barElement.appendChild(this.fillElement);
 
         this.target.appendChild(this.barElement);
@@ -47,12 +47,15 @@ export class Visual implements IVisual {
         );
 
         console.log("Visual update", options);
-
+        const fallbackColor = "#4682b4";
         // Получим значение из measure, если оно есть
         const value = options.dataViews?.[0]?.single?.value;
         const percent = typeof value === "number" ? Math.max(0, Math.min(100, value)) : 0;
 
         this.fillElement.style.width = `${percent}%`;
+        this.fillElement.style.backgroundColor = fallbackColor;
+
+
     }
 
     public getFormattingModel(): powerbi.visuals.FormattingModel {
